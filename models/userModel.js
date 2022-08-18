@@ -1,4 +1,3 @@
-//https://res.cloudinary.com/smartparkhere/image/upload/v1660688257/samples/VIP/actress-avatar-female-girl-user-woman-icon-477680_jdpfdz.png
 
 const mongoose = require('mongoose')
 

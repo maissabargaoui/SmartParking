@@ -4,6 +4,8 @@ const jwt = require('jsonwebtoken')
 
 
 
+const {CLIENT_URL} = process.env
+
 const userCtrl = {
     register: async (req, res) => {
         try {
@@ -28,6 +30,9 @@ const userCtrl = {
             }
 
             const activation_token = createActivationToken(newUser)
+
+            const url = `${CLIENT_URL}/user/activate/${activation_token}`
+            sendMail(email, url, "Verify your email address")
 
             res.json({msg: "Regsiter Test"})
         } catch (err) {
