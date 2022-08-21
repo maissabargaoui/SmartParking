@@ -32,5 +32,4 @@ router.delete('/delete/:id', auth, authAdmin, userCtrl.deleteUser)
 
 
 
-
 module.exports = router
