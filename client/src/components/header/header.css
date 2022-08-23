@@ -1,7 +1,7 @@
 header{
     width: 100%;
     min-height: 100px;
-    background: #282c34;
+    background: #031B34;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -9,7 +9,7 @@ header{
     padding: 0 30px;
 }
 header a{
-    color: white;
+    color: #FF8A71;
     text-transform: uppercase;
     letter-spacing: 1.5px;
 }
