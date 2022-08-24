@@ -12,15 +12,11 @@ function Header() {
             <div className="logo">
                 <h1><Link to="/">VIP Smart Parking</Link></h1>
             </div>
-
-            
-                
                 {
                    
                     <li><Link to="/login"><i className="fas fa-user"></i> Sign in</Link></li>
                 }
-                
-            
+                       
         </header>
     )
 }
