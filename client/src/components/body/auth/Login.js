@@ -65,7 +65,11 @@ function Login() {
                 </div>
 
             </form>
-         </div>
+         
+        
+
+         <p>New Customer? <Link to="/register">Register</Link></p>
+     </div>
             )
             }
 
