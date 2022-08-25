@@ -18,7 +18,9 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "server": "nodemon index.js --ignore client"
+
   },
   "keywords": [],
   "author": "",
