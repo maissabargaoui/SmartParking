@@ -243,7 +243,7 @@ const userCtrl = {
             return res.status(500).json({msg: err.message})
         }
     },
-    /*facebookLogin: async (req, res) => {
+    facebookLogin: async (req, res) => {
         try {
             const {accessToken, userID} = req.body
 
@@ -292,7 +292,7 @@ const userCtrl = {
         } catch (err) {
             return res.status(500).json({msg: err.message})
         }
-    }*/
+    }
 }
 
 

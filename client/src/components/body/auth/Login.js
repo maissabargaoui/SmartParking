@@ -5,7 +5,7 @@ import {showErrMsg, showSuccessMsg} from '../../utils/notification/Notification'
 import {dispatchLogin} from '../../../redux/actions/authAction'
 import {useDispatch} from 'react-redux'
 import { GoogleLogin } from 'react-google-login';
-//import FacebookLogin from 'react-facebook-login';
+import FacebookLogin from 'react-facebook-login';
 
 
 const initialState = {
@@ -60,7 +60,7 @@ function Login() {
         }
     }
 
-    /*const responseFacebook = async (response) => {
+    const responseFacebook = async (response) => {
         try {
             const {accessToken, userID} = response
             const res = await axios.post('/user/facebook_login', {accessToken, userID})
@@ -74,7 +74,7 @@ function Login() {
             err.response.data.msg && 
             setUser({...user, err: err.response.data.msg, success: ''})
         }
-    }*/
+    }
 
     return (
         <div className="login_page">
@@ -109,6 +109,12 @@ function Login() {
                     buttonText="Login with google"
                     onSuccess={responseGoogle}
                     cookiePolicy={'single_host_origin'}
+                />
+                <FacebookLogin
+                appId="1088597931155576"
+                autoLoad={false}
+                fields="name,email,picture"
+                callback={responseFacebook} 
                 />
                 
                 
