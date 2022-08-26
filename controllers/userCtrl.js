@@ -5,7 +5,7 @@ const sendMail = require('./sendMail')
 
 const {google} = require('googleapis')
 const {OAuth2} = google.auth
-const fetch = require('node-fetch')
+//const fetch = require('node-fetch')
 
 const client = new OAuth2(process.env.MAILING_SERVICE_CLIENT_ID)
 

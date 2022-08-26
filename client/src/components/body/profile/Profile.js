@@ -109,6 +109,7 @@ function Profile() {
         if(name || avatar) updateInfor()
         if(password) updatePassword()
     }
+    
 
     const handleDelete = async (id) => {
         try {
@@ -180,7 +181,13 @@ function Profile() {
                 </div>
 
                 <button disabled={loading} onClick={handleUpdate}>Update</button>
+               
             </div>
+            <div className="col-left">
+                <h2>{isAdmin ? "Admin Profile": "Go See Map"}</h2>
+                <button disabled={loading} onClick={Map}>Map</button>
+                </div>
+
 
            
         </div>
