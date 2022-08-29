@@ -12,7 +12,8 @@ import Profile from '../body/profile/Profile'
 import EditUser from '../body/profile/EditUser'
 
 import Home from '../body/home/Home'
-import map from './nav/Map'
+import Map from '../body/nav/Map'
+import book from '../body/Book/book'
 
 import {useSelector} from 'react-redux'
 
@@ -23,7 +24,9 @@ function Body() {
         <section>
             <Switch>
                 <Route path="/" component={Home} exact />
-                <Route path="/nav/" component={isLogged ? map : NotFound} exact />
+                
+                <Route path="/nav" component={isLogged ? Map : NotFound} exact />
+                <Route path="/Book" component={isLogged ? book : NotFound} exact />
 
                 <Route path="/login" component={isLogged ? NotFound : Login} exact />
                 <Route path="/register" component={isLogged ? NotFound : Register} exact />
