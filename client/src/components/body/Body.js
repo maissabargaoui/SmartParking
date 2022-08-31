@@ -16,7 +16,6 @@ import Map from '../body/nav/Map'
 
 
 import {useSelector} from 'react-redux'
-import PlacesList from './Places/PlacesList'
 
 function Body() {
     const auth = useSelector(state => state.auth)
@@ -27,7 +26,7 @@ function Body() {
                 <Route path="/" component={Home} exact />
                 
                 <Route path="/nav" component={isLogged ? Map : NotFound} exact />
-                <Route path="/Places" component={isLogged ? PlacesList : NotFound} exact />
+                
 
                 <Route path="/login" component={isLogged ? NotFound : Login} exact />
                 <Route path="/register" component={isLogged ? NotFound : Register} exact />
