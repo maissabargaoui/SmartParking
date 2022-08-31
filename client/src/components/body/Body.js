@@ -12,7 +12,10 @@ import Profile from '../body/profile/Profile'
 import EditUser from '../body/profile/EditUser'
 
 import Home from '../body/home/Home'
+import Book from './Book/Book'
+
 import Map from '../body/nav/Map'
+
 
 
 import {useSelector} from 'react-redux'
@@ -26,6 +29,7 @@ function Body() {
                 <Route path="/" component={Home} exact />
                 
                 <Route path="/nav" component={isLogged ? Map : NotFound} exact />
+                <Route path="/book" component={isLogged ? Book : NotFound} exact />
                 
 
                 <Route path="/login" component={isLogged ? NotFound : Login} exact />
