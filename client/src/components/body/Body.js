@@ -1,5 +1,7 @@
 import React from 'react'
 import {Switch, Route} from 'react-router-dom'
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 import Login from './auth/Login'
 import Register from './auth/Register'
 import ActivationEmail from './auth/ActivationEmail'
@@ -12,13 +14,13 @@ import Profile from '../body/profile/Profile'
 import EditUser from '../body/profile/EditUser'
 
 import Home from '../body/home/Home'
+import GoBook from './GoBook/GoBook'
 import Book from './Book/Book'
 
 import Map from '../body/nav/Map'
 
-
-
 import {useSelector} from 'react-redux'
+
 
 function Body() {
     const auth = useSelector(state => state.auth)
@@ -27,9 +29,11 @@ function Body() {
         <section>
             <Switch>
                 <Route path="/" component={Home} exact />
-                
                 <Route path="/nav" component={isLogged ? Map : NotFound} exact />
-                <Route path="/book" component={isLogged ? Book : NotFound} exact />
+
+                <Route path="/GoBook" component={isLogged ? GoBook : NotFound} exact />
+                <Route path="/Book" component={isLogged ? Book : NotFound} exact />
+                
                 
 
                 <Route path="/login" component={isLogged ? NotFound : Login} exact />
