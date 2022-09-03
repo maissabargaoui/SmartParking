@@ -40,12 +40,9 @@ export default props => {
         <Row noGutters className="table-row">
           <Col className="text-center">{getRow1()}</Col>
         </Row>
-        
-        
-        
-
         <p className="text-center table-name">{props.name}</p>
       </Col>
     </div>
   );
 };
+

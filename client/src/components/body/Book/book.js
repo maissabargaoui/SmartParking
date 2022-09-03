@@ -10,7 +10,6 @@ import {
   Button
 } from "reactstrap";
 
-import './index.css';
 import Table from "./table";
 
 function Book()  {
@@ -266,21 +265,21 @@ function Book()  {
 
   return (
     <div>
-      <Row noGutters className="text-center align-items-center pizza-cta">
+      <Row noGutters className="text-center align-items-center park-cta">
         <Col>
-          <p className="looking-for-pizza">
-            {!selection.table.id ? "Book a Table" : "Confirm Reservation"}
+          <p className="looking-for-park">
+            {!selection.table.id ? "Book a Parking Lot" : "Confirm Reservation"}
             <i
               className={
                 !selection.table.id
-                  ? "fas fa-chair pizza-slice"
-                  : "fas fa-clipboard-check pizza-slice"
+                  ? ""
+                  : "fas fa-clipboard-check park-slice"
               }
             ></i>
           </p>
           <p className="selected-table">
             {selection.table.id
-              ? "You are booking table " + selection.table.name
+              ? "You are booking a parking lot from " + selection.table.name
               : null}
           </p>
 
@@ -457,4 +456,4 @@ function Book()  {
   );
 };
 
-export default Book
+export default Book;

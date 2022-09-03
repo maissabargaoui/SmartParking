@@ -1,6 +1,7 @@
 import React from 'react'
 import {Switch, Route} from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import './Book/index.css'
 
 import Login from './auth/Login'
 import Register from './auth/Register'
@@ -14,12 +15,13 @@ import Profile from '../body/profile/Profile'
 import EditUser from '../body/profile/EditUser'
 
 import Home from '../body/home/Home'
-import GoBook from './GoBook/GoBook'
+import GoBook from './Book/GoBook'
 import Book from './Book/Book'
 
 import Map from '../body/nav/Map'
 
 import {useSelector} from 'react-redux'
+import BasicPass from './Book/BasicPass'
 
 
 function Body() {
@@ -33,7 +35,7 @@ function Body() {
 
                 <Route path="/GoBook" component={isLogged ? GoBook : NotFound} exact />
                 <Route path="/Book" component={isLogged ? Book : NotFound} exact />
-                
+                <Route path="/BasicPass" component={isLogged ? BasicPass : NotFound} exact />
                 
 
                 <Route path="/login" component={isLogged ? NotFound : Login} exact />
