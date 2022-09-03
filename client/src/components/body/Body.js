@@ -21,7 +21,8 @@ import Book from './Book/Book'
 import Map from '../body/nav/Map'
 
 import {useSelector} from 'react-redux'
-import BasicPass from './Book/BasicPass'
+import Pass from './Book/Pass'
+
 
 
 function Body() {
@@ -35,7 +36,8 @@ function Body() {
 
                 <Route path="/GoBook" component={isLogged ? GoBook : NotFound} exact />
                 <Route path="/Book" component={isLogged ? Book : NotFound} exact />
-                <Route path="/BasicPass" component={isLogged ? BasicPass : NotFound} exact />
+                <Route path="/Pass" component={isLogged ? Pass : NotFound} exact />
+                
                 
 
                 <Route path="/login" component={isLogged ? NotFound : Login} exact />

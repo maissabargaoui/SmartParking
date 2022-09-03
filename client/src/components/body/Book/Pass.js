@@ -1,5 +1,4 @@
-
-import React from 'react'
+import React from "react";
 import {useRef, useState} from 'react';
 import classes from './PlaceForm2.module.css';
 
@@ -25,7 +24,7 @@ const ID = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", 1, 2, 3, 4, 5
 "U", "V", "W", "X", "Y", "Z"];
 
 
-const BasicPass = (props) => {
+function Pass () {
 	const [formInputsValidity, setFormInputsValidity] = useState({
 		name: true,
 		city: true,
@@ -86,7 +85,7 @@ const BasicPass = (props) => {
 		}
 		
 		const hours = timeDiff(enteredEntryTime, enteredExitTime);
-		setAmount((hours * props.price).toFixed(2));
+		//setAmount((hours * props.price).toFixed(2));
 
 		let randomIndex;
 		let x = '';
@@ -110,7 +109,7 @@ const BasicPass = (props) => {
 		const enteredEntryTime = entryInputRef.current.value;
 		const enteredExitTime = exitInputRef.current.value;
 		
-		props.onBook({
+		/*props.onBook({
 			name: enteredName,
 			city: enteredCity,
 			phone: enteredPhone,
@@ -119,7 +118,7 @@ const BasicPass = (props) => {
 			timeSlot: [enteredEntryTime, enteredExitTime],
 			id: ticketId,
 			amount: amount
-		});
+		});*/
 	};
 
 	const nameControlClasses = `${classes.field1} ${formInputsValidity.name ? '' : classes.invalid}`;
@@ -205,4 +204,4 @@ const BasicPass = (props) => {
 	);
 }
 
-export default BasicPass;
+export default Pass;

@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect} from "react";
+import {Link} from 'react-router-dom'
 import {
   Row,
   Col,
@@ -6,9 +7,10 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
-  Input,
-  Button
+  Input
 } from "reactstrap";
+
+import Pass from "./Pass";
 
 import Table from "./table";
 
@@ -136,7 +138,7 @@ function Book()  {
       });
       res = await res.text();
       console.log("Reserved: " + res);
-      //props.setPage(2);
+      //return Thanks;
     }
   };
 
@@ -439,15 +441,7 @@ function Book()  {
           </Row>
           <Row noGutters className="text-center">
             <Col>
-              <Button
-                color="none"
-                className="book-table-btn"
-                onClick={_ => {
-                  reserve();
-                }}
-              >
-                Book Now
-              </Button>
+            <Link to="/Pass" className="book-table-btn">Book a Table</Link>
             </Col>
           </Row>
         </div>
