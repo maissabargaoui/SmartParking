@@ -25,6 +25,7 @@ import Pass from './Book/Pass'
 
 
 
+
 function Body() {
     const auth = useSelector(state => state.auth)
     const {isLogged, isAdmin} = auth
@@ -37,6 +38,7 @@ function Body() {
                 <Route path="/GoBook" component={isLogged ? GoBook : NotFound} exact />
                 <Route path="/Book" component={isLogged ? Book : NotFound} exact />
                 <Route path="/Pass" component={isLogged ? Pass : NotFound} exact />
+                
                 
                 
 

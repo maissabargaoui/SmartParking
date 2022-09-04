@@ -113,15 +113,13 @@
   color: #eee;
   outline: 0;
   box-sizing: border-box;
-  border: 1px solid #950740;
+  
   width: 100%;
   max-width: 100%;
   height: 100%;
   position: relative;
 }
-.op {
-  border: 1px solid #91DB90;
-}
+
 
 .input2 {
   font: inherit;
