@@ -597,7 +597,7 @@ function Book()  {
           <Row noGutters className="text-center">
             <Col>
             
-            <Link to="/Pass" className="book-table-btn">Book a Spot</Link>
+            
             </Col>
           </Row>
         </div>
