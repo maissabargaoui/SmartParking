@@ -7,13 +7,18 @@ declare global {
     }
 }
 
+const DEFAULT_ADRESS ="0x538642a5f4554a6f42381760f0b51e4203812a82"
+
 function  CryptoPaymentsForm () {
 
-	const [amount, setAmount] = useState(0); // new line
+	const [amount, setAmount] = useState(0); 
 
-	const [destinationAddress, setDestinationAddress] = useState(""); // new line
+	const [destinationAddress, setDestinationAddress] = useState(DEFAULT_ADRESS); // u can change it at any time 
+	const [error, setError] = useState(""); //newline
 
-	const  startPayment = async (event: any) => { // new line
+    const [transaction, setTransaction] = useState<ethers.providers.TransactionResponse | null >(null); // new line
+
+	const  startPayment = async (event: any) => { 
 
 		console.log({amount, destinationAddress});
 
@@ -42,10 +47,12 @@ try {
 		});
 
 		console.log({transactionResponse});
+		setTransaction(transactionResponse); // new line
 
 	} catch (error: any) {
 
 		console.log({error});
+		setError(error.message);
 
 	}
 
@@ -66,11 +73,30 @@ return (
 			Send Payment
 
 		</button>
+		{transaction &&
 
-	</div>
+				<div  className="alert alert-success mt-3"  role="alert">
 
-)
+				{JSON.stringify(transaction)}
 
-}
+				</div>
 
-export  default  CryptoPaymentsForm
+				}
+
+				{error &&
+
+				<div  className="alert alert-danger"  role="alert">
+
+				{JSON.stringify(error)}
+
+				</div>
+
+				}
+
+					</div>
+
+				)
+
+				}
+
+				export  default  CryptoPaymentsForm
