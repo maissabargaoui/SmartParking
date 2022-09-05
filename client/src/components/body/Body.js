@@ -19,9 +19,10 @@ import GoBook from './Book/GoBook'
 import Book from './Book/Book'
 
 import Map from '../body/nav/Map'
+import Paypal from './Book/PayPal'
 
 import {useSelector} from 'react-redux'
-import Pass from './Book/Pass'
+
 
 
 
@@ -37,7 +38,8 @@ function Body() {
 
                 <Route path="/GoBook" component={isLogged ? GoBook : NotFound} exact />
                 <Route path="/Book" component={isLogged ? Book : NotFound} exact />
-                <Route path="/Pass" component={isLogged ? Pass : NotFound} exact />
+                <Route path="/PayPal" component={isLogged ? Paypal : NotFound} exact />
+                
                 
                 
                 

@@ -1,3 +1,41 @@
-//sb-pcrux9070956@personal.example.com/ Ak2i%Le#
-//sb-m3n5a15268249@business.example.com
-//AXCcR4jImiZZ8U8JeW50PRPgmcLoD8_fXZwRowqNq66HWYBH3K_fxtQ1sHJE-nsyGKUHgSfDhPq_r80p : clinet id
+
+
+import React, { useRef, useEffect } from "react";
+
+export default function Paypal() {
+  const paypal = useRef();
+
+  useEffect(() => {
+    window.paypal
+      .Buttons({
+        createOrder: (data, actions, err) => {
+          return actions.order.create({
+            intent: "CAPTURE",
+            purchase_units: [
+              {
+                description: "Paying Parking Spot",
+                amount: {
+                  currency_code: "CAD",
+                  value: 650.0,
+                },
+              },
+            ],
+          });
+        },
+        onApprove: async (data, actions) => {
+          const order = await actions.order.capture();
+          console.log(order);
+        },
+        onError: (err) => {
+          console.log(err);
+        },
+      })
+      .render(paypal.current);
+  }, []);
+
+  return (
+    <div>
+      <div ref={paypal}></div>
+    </div>
+  );
+}

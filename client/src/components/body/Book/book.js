@@ -2,6 +2,8 @@ import React, { useState, useEffect} from "react";
 import {Link} from 'react-router-dom'
 import {useRef} from 'react';
 import classes from './BookForm.module.css';
+import PayPal from "./PayPal";
+
 import {
   Row,
   Col,
@@ -13,7 +15,7 @@ import {
   Button
 } from "reactstrap";
 
-import Pass from "./Pass";
+
 
 import Table from "./table";
 
@@ -41,6 +43,7 @@ const ID = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", 1, 2, 3, 4, 5
 
 
 function Book()  {
+  const [checkout, setCheckOut] = useState(false);
   const [totalTables, setTotalTables] = useState([]);
   const [formInputsValidity, setFormInputsValidity] = useState({
 		name: true,
@@ -588,7 +591,7 @@ function Book()  {
 							</div>
 						</div>  
 					</div>					
-					{isConfirmed && <button type="text" className={classes.submit2}>BOOK</button>}
+					{isConfirmed && <button type="text" className={classes.submit2}>BOOKED SPOT</button>}
 				</form>
 				{!isConfirmed && <button type="text" className={classes.submit} onClick = {amountHandler}>CONFIRM</button>}
 			</div>			
@@ -596,6 +599,18 @@ function Book()  {
           </Row>
           <Row noGutters className="text-center">
             <Col>
+
+            {checkout ? (
+        <PayPal />
+      ) : (
+        <Button
+          onClick={() => {
+            setCheckOut(true);
+          }}
+        >
+          Checkout
+        </Button>
+      )}
             
             
             </Col>
