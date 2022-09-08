@@ -2,7 +2,6 @@ import  React, { useState } from  'react'
 import { ethers } from 'ethers'
 import { Network } from '@ethersproject/providers';
 
-
 declare global {
     interface Window {
         ethereum:any;
@@ -12,7 +11,6 @@ declare global {
 export  interface  TransactionResponsePayment  extends  ethers.providers.TransactionResponse {
 	network?: ethers.providers.Network,
 }
-
 
 const DEFAULT_ADRESS ="0x538642a5f4554a6f42381760f0b51e4203812a82"
 

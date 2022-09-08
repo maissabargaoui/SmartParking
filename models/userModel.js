@@ -23,8 +23,8 @@ const userSchema = new mongoose.Schema({
         default: 0 // 0 = user, 1 = admin
     },
     avatar: {
-        type: String,
-        default: "https://res.cloudinary.com/smarttablehere/image/upload/v1660688257/samples/VIP/actress-avatar-female-girl-user-woman-icon-477680_jdpfdz.png"
+        type: String,       
+        default: "https://res.cloudinary.com/smartparkhere/image/upload/v1661367677/avatar/ow3uqfktawoewgnjdmbf.png"
     }
 }, {
     timestamps: true

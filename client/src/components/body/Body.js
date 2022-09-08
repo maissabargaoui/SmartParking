@@ -1,6 +1,7 @@
 import React from 'react'
 import {Switch, Route} from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import 'leaflet/dist/leaflet.css';
 import './Book/index.css'
 
 import Login from './auth/Login'
@@ -17,8 +18,7 @@ import EditUser from '../body/profile/EditUser'
 import Home from '../body/home/Home'
 import GoBook from './Book/GoBook'
 import Book from './Book/Book'
-
-import Map from '../body/nav/Map'
+import MapDisplay from './nav/Nav'
 import Paypal from './Book/PayPal'
 
 import {useSelector} from 'react-redux'
@@ -35,16 +35,14 @@ function Body() {
         <section>
             <Switch>
                 <Route path="/" component={Home} exact />
-                <Route path="/nav" component={isLogged ? Map : NotFound} exact />
+                
 
                 <Route path="/GoBook" component={isLogged ? GoBook : NotFound} exact />
                 <Route path="/Book" component={isLogged ? Book : NotFound} exact />
+                
                 <Route path="/PayPal" component={isLogged ? Paypal : NotFound} exact />
+                <Route path="/Nav" component={isLogged ?  MapDisplay : NotFound} exact />
                 <Route path="/Practice" component={isLogged ? Practice : NotFound} exact />
-                
-                
-                
-                
 
                 <Route path="/login" component={isLogged ? NotFound : Login} exact />
                 <Route path="/register" component={isLogged ? NotFound : Register} exact />

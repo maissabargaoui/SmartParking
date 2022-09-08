@@ -21,11 +21,7 @@ function GoBook() {
       </Row>
       <Row noGutters className="text-center big-img-container">
       <Col>
-          <img
-            src={require("../assets/ai.png")}
-            alt="cafe"
-            className="big-img"
-          />
+          
         </Col>
         
       </Row>
