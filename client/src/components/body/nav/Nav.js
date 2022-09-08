@@ -24,8 +24,8 @@ class MapDisplay extends Component {
   
   state = {
     greenIcon: {
-      lat: 35.787449,
-      lng: -78.6438197,
+      lat: 36.8998757,
+      lng: 10.1908469,
     },
     redIcon: {
       lat: 35.774416,
@@ -38,7 +38,6 @@ class MapDisplay extends Component {
     zoom: 13
   }
 
-
   grenIcon = L.icon({
     iconUrl: leafGreen,
     shadowUrl: leafShadow,
@@ -49,6 +48,8 @@ class MapDisplay extends Component {
     popupAnchor:  [-3, -76]
   });
 
+
+ 
   redIcon = L.icon({
     iconUrl: leafRed,
     shadowUrl: leafShadow,
@@ -81,7 +82,7 @@ class MapDisplay extends Component {
         />
         <Marker position={positionGreenIcon} icon={this.grenIcon}>
           <Popup>
-          I am a green leaf
+          VIP Smart Parking
           </Popup>
         </Marker>
         <Marker position={positionRedIcon} icon={this.redIcon}>

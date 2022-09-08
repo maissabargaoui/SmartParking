@@ -4,6 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'leaflet/dist/leaflet.css';
 import './Book/index.css'
 
+
+
 import Login from './auth/Login'
 import Register from './auth/Register'
 import ActivationEmail from './auth/ActivationEmail'
@@ -19,12 +21,12 @@ import Home from '../body/home/Home'
 import GoBook from './Book/GoBook'
 import Book from './Book/Book'
 import MapDisplay from './nav/Nav'
-import Paypal from './Book/PayPal'
+
+
 
 import {useSelector} from 'react-redux'
 import Practice from './Practice/Practice'
-
-
+import Checkout from './PayPal/Checkout';
 
 
 
@@ -40,8 +42,11 @@ function Body() {
                 <Route path="/GoBook" component={isLogged ? GoBook : NotFound} exact />
                 <Route path="/Book" component={isLogged ? Book : NotFound} exact />
                 
-                <Route path="/PayPal" component={isLogged ? Paypal : NotFound} exact />
+                
                 <Route path="/Nav" component={isLogged ?  MapDisplay : NotFound} exact />
+                <Route path="/PayPal" component={isLogged ?  Checkout : NotFound} exact />
+                
+                
                 <Route path="/Practice" component={isLogged ? Practice : NotFound} exact />
 
                 <Route path="/login" component={isLogged ? NotFound : Login} exact />

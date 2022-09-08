@@ -1,8 +1,7 @@
-import React, { useState, useEffect} from "react";
-import {Link} from 'react-router-dom'
-import {useRef} from 'react';
-import classes from './BookForm.module.css';
-import PayPal from "./PayPal";
+import React, { useState, useEffect , useRef} from "react";
+import {Link} from 'react'
+import classes from './PassForm.module.css';
+
 
 import {
   Row,
@@ -14,8 +13,6 @@ import {
   Input,
   Button
 } from "reactstrap";
-
-
 
 import Table from "./table";
 
@@ -37,14 +34,10 @@ const timeDiff = (t1, t2) => {
 	return (minutes / 60);
 };
 
-const ID = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", 1, 2, 3, 4, 5, 6, 7, 8, 9, "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T",
-"U", "V", "W", "X", "Y", "Z"];
-
-
-
 function Book()  {
-  const [checkout, setCheckOut] = useState(false);
+  
   const [totalTables, setTotalTables] = useState([]);
+  const [checkout, setCheckOut] = useState(false);
   const [formInputsValidity, setFormInputsValidity] = useState({
 		name: true,
 		city: true,
@@ -55,7 +48,7 @@ function Book()  {
 	});
 
 	const [isConfirmed, setIsConfirmed] = useState(false);
-	//const [amount, setAmount] = useState(null);
+	const [amount, setAmount] = useState(null);
 	const [ticketId, setTicketId] = useState(null);
 
 	const nameInputRef = useRef();
@@ -107,7 +100,7 @@ function Book()  {
 		const hours = timeDiff(enteredEntryTime, enteredExitTime);
 		//setAmount((hours * props.price).toFixed(2));
 
-		let randomIndex;
+		/*let randomIndex;
 		let x = '';
 		for (let i = 0; i < 6; i++) {
 			randomIndex = Math.floor(Math.random() * ID.length);
@@ -115,13 +108,13 @@ function Book()  {
 		}
 
 		setTicketId(x);
-		setIsConfirmed(true);
+		setIsConfirmed(true);*/
 	};
 
 	const bookingHandler = (event) => {
 		event.preventDefault();
 
-		/*const enteredName = nameInputRef.current.value;
+		const enteredName = nameInputRef.current.value;
 		const enteredCity = cityInputRef.current.value;
 		const enteredPhone = phoneInputRef.current.value;
 		const enteredVehicle = vehicleInputRef.current.value;
@@ -129,7 +122,7 @@ function Book()  {
 		const enteredEntryTime = entryInputRef.current.value;
 		const enteredExitTime = exitInputRef.current.value;
 		
-		props.onBook({
+		/*props.onBook({
 			name: enteredName,
 			city: enteredCity,
 			phone: enteredPhone,
@@ -149,7 +142,6 @@ function Book()  {
 	const timeSlotControlClasses = `${classes.field} ${formInputsValidity.timeSlot ? '' : classes.invalid}`;
 	const outputControlClasses = `${classes.output} ${isConfirmed ? classes.op : ''}`;
 
-	//const op = (isConfirmed ? `$${amount}` : 'Net amount');	
 
   // User's selections
   const [selection, setSelection] = useState({
@@ -250,14 +242,15 @@ function Book()  {
 
   // Make the reservation if all details are filled out
   const reserve = async _ => {
-    if (
-      (booking.name.length === 0) |
+    
+      /*(booking.name.length === 0) |
       (booking.phone.length === 0) |
       (booking.email.length === 0)
     ) {
       console.log("Incomplete Details");
       setReservationError(true);
-    } else {
+    } else {*/
+    { 
       const datetime = getDate();
       let res = await fetch("http://localhost:3000/reserve", {
         method: "POST",
@@ -403,6 +396,7 @@ function Book()  {
     <div>
       <Row noGutters className="text-center align-items-center park-cta">
         <Col>
+
           <p className="looking-for-park">
             {!selection.table.id ? "Book a Parking Lot" : "Confirm Reservation"}
             <i
@@ -418,10 +412,10 @@ function Book()  {
               ? "You are booking a parking lot from " + selection.table.name
               : null}
           </p>
-
           {reservationError ? (
             <p className="reservation-error">
               * Please fill out all of the details.
+      
             </p>
           ) : null}
         </Col>
@@ -525,10 +519,8 @@ function Book()  {
         <div id="confirm-reservation-stuff">
           <Row
             noGutters
-            className="text-center justify-content-center reservation-details-container"
-          >
-
-      <section className = {classes.section}>
+            className="text-center justify-content-center reservation-details-container">
+              <section className = {classes.section}>
 			<div className = {classes.container}>
 				<div className = {classes.title}>Basic pass</div>
 				<div className = {classes.subtitle}>Single entry and exit</div>
@@ -590,29 +582,18 @@ function Book()  {
 								
 							</div>
 						</div>  
-					</div>					
-					{isConfirmed && <button type="text" className={classes.submit2}>BOOKED SPOT</button>}
+					</div>
+				{!isConfirmed && <button type="text" className={classes.submit} onClick = {reserve}>CONFIRM</button>}
+        {isConfirmed && <button type="text" className={classes.submit2}>BOOK</button>}
 				</form>
-				{!isConfirmed && <button type="text" className={classes.submit} onClick = {amountHandler}>CONFIRM</button>}
-			</div>			
+			</div>
+			
 		</section>
-          </Row>
+         </Row>
           <Row noGutters className="text-center">
-            <Col>
-
-            {checkout ? (
-        <PayPal />
-      ) : (
-        <Button
-          onClick={() => {
-            setCheckOut(true);
-          }}
-        >
-          Checkout
-        </Button>
-      )}
-            
-            
+          <Col>
+         
+                 
             </Col>
           </Row>
         </div>
