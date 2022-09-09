@@ -1,6 +1,7 @@
 import React, { useState, useEffect , useRef} from "react";
-import {Link} from 'react'
+
 import classes from './PassForm.module.css';
+
 
 
 import {
@@ -16,9 +17,10 @@ import {
 
 import Table from "./table";
 
+
 const isEmpty = value => value.trim() === '';
 
-const isTenChars = value => value.trim().length === 10;
+const isEightChars = value => value.trim().length === 8;
 
 const checkSlot = (t1, t2) => {
 	const currentDate = new Date();
@@ -33,6 +35,9 @@ const timeDiff = (t1, t2) => {
 	const minutes = ms / (1000 * 60);
 	return (minutes / 60);
 };
+
+const ID = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", 1, 2, 3, 4, 5, 6, 7, 8, 9, "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T",
+"U", "V", "W", "X", "Y", "Z"];
 
 function Book()  {
   
@@ -70,7 +75,7 @@ function Book()  {
 
 		const enteredNameIsValid = !isEmpty(enteredName);
 		const enteredCityIsValid = !isEmpty(enteredCity);
-		const enteredPhoneIsValid = isTenChars(enteredPhone);
+		const enteredPhoneIsValid = isEightChars(enteredPhone);
 		const enteredVehicleIsValid = !isEmpty(enteredVehicle);
 		const enteredLicenseIsValid = !isEmpty(enteredLicense);
 		const enteredTimeslotIsValid = checkSlot(enteredEntryTime, enteredExitTime);
@@ -100,7 +105,7 @@ function Book()  {
 		const hours = timeDiff(enteredEntryTime, enteredExitTime);
 		//setAmount((hours * props.price).toFixed(2));
 
-		/*let randomIndex;
+		let randomIndex;
 		let x = '';
 		for (let i = 0; i < 6; i++) {
 			randomIndex = Math.floor(Math.random() * ID.length);
@@ -108,13 +113,13 @@ function Book()  {
 		}
 
 		setTicketId(x);
-		setIsConfirmed(true);*/
+		setIsConfirmed(true);
 	};
 
 	const bookingHandler = (event) => {
 		event.preventDefault();
 
-		const enteredName = nameInputRef.current.value;
+		/*const enteredName = nameInputRef.current.value;
 		const enteredCity = cityInputRef.current.value;
 		const enteredPhone = phoneInputRef.current.value;
 		const enteredVehicle = vehicleInputRef.current.value;
@@ -122,7 +127,7 @@ function Book()  {
 		const enteredEntryTime = entryInputRef.current.value;
 		const enteredExitTime = exitInputRef.current.value;
 		
-		/*props.onBook({
+		props.onBook({
 			name: enteredName,
 			city: enteredCity,
 			phone: enteredPhone,
@@ -161,6 +166,7 @@ function Book()  {
     phone: "",
     email: ""
   });
+
 
   // List of potential locations
   const [locations] = useState(["Any Location", "First", "Second", "Third"]);
@@ -398,7 +404,7 @@ function Book()  {
         <Col>
 
           <p className="looking-for-park">
-            {!selection.table.id ? "Book a Parking Lot" : "Confirm Reservation"}
+            {!selection.table.id ? "Search For A Spot In Terms of Time And Parking Floor" : "Confirm Reservation"}
             <i
               className={
                 !selection.table.id
@@ -409,7 +415,7 @@ function Book()  {
           </p>
           <p className="selected-table">
             {selection.table.id
-              ? "Here is Your Parking Id  " 
+              ? "This is Your Parking ID  XJ47U  Please Save It !   " 
               : null}
           </p>
           {reservationError ? (
@@ -583,18 +589,17 @@ function Book()  {
 							</div>
 						</div>  
 					</div>
-				{!isConfirmed && <button type="text" className={classes.submit} onClick = {reserve}>CONFIRM</button>}
-        {isConfirmed && <button type="text" className={classes.submit2}>BOOK</button>}
+          {isConfirmed && <button type="text" className={classes.submit2}>BOOKED</button>}
 				</form>
+				{!isConfirmed && <button type="text" className={classes.submit} onClick = {reserve}>CONFIRM</button>}
 			</div>
 			
 		</section>
          </Row>
           <Row noGutters className="text-center">
           <Col>
-         
-                 
-            </Col>
+          
+              </Col>
           </Row>
         </div>
       )}

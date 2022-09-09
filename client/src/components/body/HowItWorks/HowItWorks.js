@@ -10,28 +10,28 @@ const HowItWorks = (props) => {
       <div className = 'sidebar'>
         
 
-        <h3 className = {classes.header}>How it works</h3>
+        <h3 className = {classes.header}>How VIP Works</h3>
 
         <ul className = {classes.container}>
           <li className = {classes.item}>
             <span className = {classes.number}>1</span>
             <div className = {classes.content}>
-              <div className = {classes.title}>Find your car park!</div>
-              <p className = {classes.read}>Sign up and check our presence at hotels, restaurants, airport...</p>
+              <div className = {classes.title}>Find Your Car Parking Spot !</div>
+              <p className = {classes.read}>Sign up First To Check Our Available Spots</p>
             </div>
           </li>
           <li className = {classes.item}>
             <span className = {classes.number}>2</span>
             <div className = {classes.content}>
-              <div className = {classes.title}>Book!</div>
-              <p className = {classes.read}>Select date and time, check availability, see prices...</p>
+              <div className = {classes.title}> Booking Process !</div>
+              <p className = {classes.read}>Select Date And Our Software Will Generate List Of Parking Spots According To Availability</p>
             </div>
           </li>
           <li className = {classes.item}>
             <span className = {classes.number}>3</span>
             <div className = {classes.content}>
-              <div className = {classes.title}>And park!</div>
-              <p className = {classes.read}>Upon arrival, just show your reservation in the car park.</p>
+              <div className = {classes.title}>Confirm Your Reservation And Proceed With Payment !</div>
+              <p className = {classes.read}>Upon arrival, just show your reserved park ID </p>
             </div>            
           </li>
         </ul>

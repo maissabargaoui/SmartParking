@@ -5,7 +5,6 @@ import 'leaflet/dist/leaflet.css';
 import './Book/index.css'
 
 
-
 import Login from './auth/Login'
 import Register from './auth/Register'
 import ActivationEmail from './auth/ActivationEmail'
@@ -25,7 +24,7 @@ import MapDisplay from './nav/Nav'
 
 
 import {useSelector} from 'react-redux'
-import Practice from './Practice/Practice'
+import Crypto from './Practice/Practice'
 import Checkout from './PayPal/Checkout';
 import HowItWorks from './HowItWorks/HowItWorks';
 
@@ -49,7 +48,7 @@ function Body() {
                 <Route path="/HowItWorks" component={isLogged ?  HowItWorks : NotFound} exact />
                 
                 
-                <Route path="/Practice" component={isLogged ? Practice : NotFound} exact />
+                <Route path="/Practice" component={isLogged ? Crypto : NotFound} exact />
 
                 <Route path="/login" component={isLogged ? NotFound : Login} exact />
                 <Route path="/register" component={isLogged ? NotFound : Register} exact />

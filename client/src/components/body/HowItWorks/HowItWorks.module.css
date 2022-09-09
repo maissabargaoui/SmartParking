@@ -1,5 +1,5 @@
 .header {
-	font-family: "Trebuchet MS", sans-serif;
+	font-family: "Manrope", sans-serif;
 	font-size: 2em;
 	letter-spacing: 1px;
 	color: #2c2416;
@@ -22,7 +22,7 @@
 }
 
 .title {
-	color: #171835;
+ color: #171835;
   font-size: 25px;
   line-height: 20px;
   font-weight: 500;
@@ -38,7 +38,7 @@
 }
 
 .read {
-	font-family: 'Quicksand', sans-serif;
+	font-family: 'Manrope', sans-serif;
 	padding-right: 2px;
 }
 

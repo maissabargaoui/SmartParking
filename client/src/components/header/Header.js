@@ -91,13 +91,15 @@ function Header() {
             <img src={user.avatar} alt=""/> {user.name} <i className="fas fa-angle-down"></i>
             </Link>
             <ul className="dropdown">
-                <li><Link to="/profile">Profile</Link></li>
-                <li><Link to="/" onClick={handleLogout}>Logout</Link></li>
-                <li><Link to="/GoBook">GoBook</Link></li>
+                <li><Link to="/HowItWorks">HowItWorks</Link></li>
+                <li><Link to="/Book">Book</Link></li>
                 <li><Link to="/nav">MapDisplay</Link></li>
                 <li><Link to="/PayPal">Checkout</Link></li>
-                <li><Link to="/Practice">Practice</Link></li>
-                <li><Link to="/HowItWorks">HowItWorks</Link></li>
+                <li><Link to="/Practice">Crypto</Link></li>
+                <li><Link to="/profile">Profile</Link></li>
+                <li><Link to="/" onClick={handleLogout}>Logout</Link></li>
+               
+                
             </ul>
         </li>
     }

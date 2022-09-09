@@ -8,7 +8,7 @@ import leafGreen from './assets/leaf-green.png';
 import leafRed from './assets/leaf-red.png';
 import leafOrange from './assets/leaf-orange.png';
 import leafShadow from './assets/leaf-shadow.png';
-import Book from '../Book/Book';
+
 
 
 Leaflet.Icon.Default.imagePath =
@@ -100,7 +100,7 @@ class MapDisplay extends Component {
         </Marker>
         <body>
           <div id="map"></div>
-          <button id="refreshButton" onclick="Book()">Refresh Button</button>
+          <button id="refreshButton" onclick="Book()">Zoom Into VIP</button>
           
         </body>
       </Map>

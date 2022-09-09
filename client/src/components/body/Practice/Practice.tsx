@@ -5,7 +5,7 @@ import 'antd/dist/antd.css';
 import { Radio, Select } from 'antd';
 
 
-const Practice = () => {
+const Crypto = () => {
 
     const currencyOptions = [
         {
@@ -47,12 +47,11 @@ const Practice = () => {
         </Radio.Group>
       )
   
-
-
     return (
         <div className="my-3">
             <h1>
-                PAY YOUR PARKING LOT THE WAY YOU WANT
+                Have You Payed A Parking Lot Using Ethereum Or Binance ? 
+                Let's Give It A Try ! 
             </h1>
            
         <div className="ml-5 pl-5">
@@ -64,4 +63,4 @@ const Practice = () => {
     )
 }
 
-export default Practice
+export default Crypto;

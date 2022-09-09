@@ -1,5 +1,5 @@
-/*import React from 'react'
-import CardIcon from "../assets/credit-card.svg";
+
+/*import CardIcon from "../assets/credit-card.svg";
 import ProductImage from "../assets/product-image.jpg";
 import PaypalCheckoutButton from "./PaypalCheckoutButton";
 
@@ -48,6 +48,7 @@ const Checkout = () => {
 //export default Checkout;
 
 import React, { useState, useRef, useEffect } from 'react';
+
 import chair from '../assets/credit-card.svg';
 import gif from '../assets/product-image.jpg';
 
@@ -116,9 +117,11 @@ function Checkout() {
 
   return (
     <div className="App">
+      
       <Product product={product} />
     </div>
   );
 }
 
 export default Checkout;
+
