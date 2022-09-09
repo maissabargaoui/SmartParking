@@ -8,6 +8,8 @@ import leafGreen from './assets/leaf-green.png';
 import leafRed from './assets/leaf-red.png';
 import leafOrange from './assets/leaf-orange.png';
 import leafShadow from './assets/leaf-shadow.png';
+import Book from '../Book/Book';
+
 
 Leaflet.Icon.Default.imagePath =
 '../node_modules/leaflet'
@@ -21,6 +23,7 @@ Leaflet.Icon.Default.mergeOptions({
 });
 
 class MapDisplay extends Component {
+  
   
   state = {
     greenIcon: {
@@ -82,7 +85,7 @@ class MapDisplay extends Component {
         />
         <Marker position={positionGreenIcon} icon={this.grenIcon}>
           <Popup>
-          VIP Smart Parking
+                VIP Smart Parking
           </Popup>
         </Marker>
         <Marker position={positionRedIcon} icon={this.redIcon}>
@@ -95,6 +98,11 @@ class MapDisplay extends Component {
           I am an orange leaf
           </Popup>
         </Marker>
+        <body>
+          <div id="map"></div>
+          <button id="refreshButton" onclick="Book()">Refresh Button</button>
+          
+        </body>
       </Map>
     );
   }

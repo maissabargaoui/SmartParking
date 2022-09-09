@@ -409,7 +409,7 @@ function Book()  {
           </p>
           <p className="selected-table">
             {selection.table.id
-              ? "You are booking a parking lot from " + selection.table.name
+              ? "Here is Your Parking Id  " 
               : null}
           </p>
           {reservationError ? (
@@ -457,7 +457,7 @@ function Book()  {
             <Col xs="12" sm="3">
               <UncontrolledDropdown>
                 <DropdownToggle color="none" caret className="booking-dropdown">
-                  {selection.time === null ? "Select a Time" : selection.time}
+                  {selection.time === null ? "Select Time" : selection.time}
                 </DropdownToggle>
                 <DropdownMenu right className="booking-dropdown-menu">
                   {getTimes()}
@@ -478,7 +478,7 @@ function Book()  {
               <UncontrolledDropdown>
                 <DropdownToggle color="none" caret className="booking-dropdown">
                   {selection.size === 0
-                    ? "Select how many slots"
+                    ? "Select How Many Slots"
                     : selection.size.toString()}
                 </DropdownToggle>
                 <DropdownMenu right className="booking-dropdown-menu">

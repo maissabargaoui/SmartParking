@@ -97,6 +97,7 @@ function Header() {
                 <li><Link to="/nav">MapDisplay</Link></li>
                 <li><Link to="/PayPal">Checkout</Link></li>
                 <li><Link to="/Practice">Practice</Link></li>
+                <li><Link to="/HowItWorks">HowItWorks</Link></li>
             </ul>
         </li>
     }

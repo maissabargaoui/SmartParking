@@ -27,6 +27,7 @@ import MapDisplay from './nav/Nav'
 import {useSelector} from 'react-redux'
 import Practice from './Practice/Practice'
 import Checkout from './PayPal/Checkout';
+import HowItWorks from './HowItWorks/HowItWorks';
 
 
 
@@ -45,6 +46,7 @@ function Body() {
                 
                 <Route path="/Nav" component={isLogged ?  MapDisplay : NotFound} exact />
                 <Route path="/PayPal" component={isLogged ?  Checkout : NotFound} exact />
+                <Route path="/HowItWorks" component={isLogged ?  HowItWorks : NotFound} exact />
                 
                 
                 <Route path="/Practice" component={isLogged ? Practice : NotFound} exact />
