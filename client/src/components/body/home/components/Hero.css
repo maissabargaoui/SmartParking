@@ -11,10 +11,12 @@
 }
 
 .hero__title {
-  position: absolute;
-  bottom: 15%;
-  left: 5%;
-  color: white;
+  font-family: 'Manrope', sans-serif;
+  position:absolute;
+  bottom: 0%;
+  left: 0%;
+  background-color: #d2e2f3;
+  color: rgb(11, 9, 9);
   font-size: 4rem;
-  padding: 15px;
+ 
 }

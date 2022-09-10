@@ -3,7 +3,7 @@
 	font-size: 2em;
 	letter-spacing: 1px;
 	color: #2c2416;
-	border-bottom: 2px solid #cc9900;
+	border-bottom: 2px solid #FF8A71;
 	text-transform: uppercase;
 	margin-bottom: 25px;
 	text-align: center;
@@ -47,7 +47,7 @@
 	position: absolute;
 	padding-right: 10px;
 	text-align: right;
-	color: #cc9900;
+	color: #FF8A71;
   font-size: 30px;
   font-weight: 700;
 }
