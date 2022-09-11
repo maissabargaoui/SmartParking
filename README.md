@@ -46,18 +46,18 @@ Clone the project
 Go to the project directory
 Split Terminal
 
-```bash cd SmartParking /  cd client 
-  
+```bash 
+cd SmartParking /  cd client   
 ```
 
 Install dependencies
-For both splited terminal
+
 ```bash
   npm install
 ```
 
 Start the server
-For both 
+
 ```bash
   npm start
 ```
