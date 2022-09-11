@@ -40,23 +40,24 @@ MetaMask
 Clone the project
 
 ```bash
-  git clone https://link-to-project
+  git clone https://github.com/mayssabargaoui1/SmartParking.git
 ```
 
 Go to the project directory
+Split Terminal
 
-```bash
-  cd my-project 
+```bash cd SmartParking /  cd client 
+  
 ```
 
 Install dependencies
-
+For both splited terminal
 ```bash
   npm install
 ```
 
 Start the server
-
+For both 
 ```bash
   npm start
 ```
@@ -66,9 +67,11 @@ Start the server
 
 https://www.mongodb.com/languages/mern-stack-tutorial
 
-https://leafletjs.com
+https://dev.to/jlong4223/how-to-implement-email-functionality-with-node-js-react-js-nodemailer-and-oauth2-2h7m
 
-https://atila.ca
+https://react-leaflet.js.org
+
+https://www.geeksforgeeks.org/how-to-connect-reactjs-with-metamask/
 
 ![Register](https://user-images.githubusercontent.com/94033311/189497421-0a69e5b5-b160-4770-92b7-95962a2be78e.png)
 ![Booking Form](https://user-images.githubusercontent.com/94033311/189497439-a667a692-c037-4712-9cc2-e341e9d956c2.png)
