@@ -528,7 +528,7 @@ function Book()  {
             className="text-center justify-content-center reservation-details-container">
               <section className = {classes.section}>
 			<div className = {classes.container}>
-				<div className = {classes.title}>Basic pass</div>
+				<div className = {classes.title}>Fill Your Form</div>
 				<div className = {classes.subtitle}>Single entry and exit</div>
 				<div className = {classes.space}></div>
 				<form onSubmit = {bookingHandler}>
@@ -598,7 +598,6 @@ function Book()  {
          </Row>
           <Row noGutters className="text-center">
           <Col>
-          
               </Col>
           </Row>
         </div>
