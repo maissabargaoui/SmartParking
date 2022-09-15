@@ -24,7 +24,7 @@ import MapDisplay from './nav/Nav'
 
 
 import {useSelector} from 'react-redux'
-import Crypto from './Practice/Practice'
+import Crypto from './Paycrypto/Paycrypto'
 import Checkout from './PayPal/Checkout';
 import HowItWorks from './HowItWorks/HowItWorks';
 
@@ -48,7 +48,7 @@ function Body() {
                 <Route path="/HowItWorks" component={isLogged ?  HowItWorks : NotFound} exact />
                 
                 
-                <Route path="/Practice" component={isLogged ? Crypto : NotFound} exact />
+                <Route path="/Paycrypto" component={isLogged ? Crypto : NotFound} exact />
 
                 <Route path="/login" component={isLogged ? NotFound : Login} exact />
                 <Route path="/register" component={isLogged ? NotFound : Register} exact />
